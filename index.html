@@ -9,65 +9,88 @@
 body{
   margin:0;
   height:100vh;
-  background:#0b0b0b;
+  background:#070707;
   font-family:Helvetica, Arial, sans-serif;
-  color:white;
   display:flex;
   flex-direction:column;
   justify-content:center;
   align-items:center;
+  color:white;
   text-align:center;
   overflow:hidden;
 }
 
-/* flame column container */
+/* flame container */
 
-.flame-column{
+.fire{
   position:absolute;
   bottom:0;
-  width:160px;
-  height:350px;
-  filter:blur(6px);
+  width:200px;
+  height:380px;
 }
 
-/* animated flame shapes */
+/* flame layers */
 
 .flame{
   position:absolute;
   bottom:0;
-  width:100%;
-  height:100%;
-  background:
-    radial-gradient(circle at 50% 90%, #fff59d 0%, #ff9800 30%, #ff5722 55%, transparent 70%);
-  animation:flameMove 2.2s infinite ease-in-out;
+  left:50%;
+  width:120px;
+  height:220px;
+  transform:translateX(-50%);
+  border-radius:60% 60% 40% 40%;
+  filter:blur(6px);
+  opacity:.9;
 }
 
-.flame:nth-child(2){
-  animation-delay:1s;
-  transform:scale(.8);
-  opacity:.8;
+/* flame colors */
+
+.flame1{
+  background:radial-gradient(circle at 50% 80%, #fff8c6 0%, #ffcc00 20%, #ff7b00 50%, transparent 70%);
+  animation:flameRise 3s infinite ease-in-out;
 }
 
-.flame:nth-child(3){
-  animation-delay:.5s;
-  transform:scale(.6);
-  opacity:.6;
+.flame2{
+  background:radial-gradient(circle at 50% 80%, #fff4a6 0%, #ff9800 30%, #ff5722 60%, transparent 75%);
+  animation:flameRise 2.2s infinite ease-in-out;
+  transform:translateX(-50%) scale(.9);
 }
 
-@keyframes flameMove{
+.flame3{
+  background:radial-gradient(circle at 50% 80%, #ffe082 0%, #ff6f00 40%, #ff3d00 65%, transparent 80%);
+  animation:flameRise 1.8s infinite ease-in-out;
+  transform:translateX(-50%) scale(.7);
+}
+
+/* movement */
+
+@keyframes flameRise{
+
   0%{
-    transform:translateY(0) scaleX(.8);
+    transform:translateX(-50%) translateY(0) scaleX(.8);
     opacity:.9;
   }
+
+  25%{
+    transform:translateX(-48%) translateY(-25px) scaleX(1.1);
+  }
+
   50%{
-    transform:translateY(-30px) scaleX(1.1);
-    opacity:1;
+    transform:translateX(-52%) translateY(-40px) scaleX(.9);
   }
+
+  75%{
+    transform:translateX(-49%) translateY(-20px) scaleX(1.05);
+  }
+
   100%{
-    transform:translateY(0) scaleX(.8);
+    transform:translateX(-50%) translateY(0) scaleX(.8);
     opacity:.9;
   }
+
 }
+
+/* text styling */
 
 h1{
   font-size:72px;
@@ -76,16 +99,16 @@ h1{
 }
 
 .tagline{
-  font-size:22px;
-  opacity:.85;
   margin-top:20px;
+  font-size:22px;
+  opacity:.9;
   z-index:10;
 }
 
 .models{
   margin-top:25px;
-  opacity:.75;
   font-size:20px;
+  opacity:.75;
   z-index:10;
 }
 
@@ -101,10 +124,10 @@ h1{
 
 <body>
 
-<div class="flame-column">
-  <div class="flame"></div>
-  <div class="flame"></div>
-  <div class="flame"></div>
+<div class="fire">
+  <div class="flame flame1"></div>
+  <div class="flame flame2"></div>
+  <div class="flame flame3"></div>
 </div>
 
 <h1>RŪNŌ</h1>
