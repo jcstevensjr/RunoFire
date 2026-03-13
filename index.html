@@ -45,7 +45,7 @@ body{
   opacity:.9;
 }
 
-/* randomize flame motion */
+/* vary flame motion */
 
 .flame:nth-child(odd){
   animation-duration:1.8s;
@@ -75,13 +75,25 @@ body{
 
 }
 
-/* text styling */
+/* logo */
 
 h1{
   font-size:72px;
   letter-spacing:8px;
   z-index:10;
 }
+
+/* glowing rune */
+
+.rune{
+  color:#ff9800;
+  text-shadow:
+    0 0 10px #ff9800,
+    0 0 20px #ff5722,
+    0 0 30px #ff3d00;
+}
+
+/* text */
 
 .tagline{
   margin-top:20px;
@@ -124,7 +136,7 @@ h1{
 
 </div>
 
-<h1>RŪNŌ</h1>
+<h1>RŪNŌ <span class="rune">ᚲ</span></h1>
 
 <div class="tagline">
 Clean-burning pellet stoves
