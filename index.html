@@ -20,72 +20,57 @@ body{
   overflow:hidden;
 }
 
-/* flame container */
+/* full width fire container */
 
 .fire{
   position:absolute;
   bottom:0;
-  width:200px;
-  height:380px;
+  width:100%;
+  height:320px;
+  display:flex;
+  justify-content:space-evenly;
+  align-items:flex-end;
 }
 
-/* flame layers */
+/* individual flames */
 
 .flame{
-  position:absolute;
-  bottom:0;
-  left:50%;
-  width:120px;
-  height:220px;
-  transform:translateX(-50%);
-  border-radius:60% 60% 40% 40%;
+  width:80px;
+  height:180px;
+  background:
+  radial-gradient(circle at 50% 80%, #fff6b0 0%, #ffcc00 20%, #ff7b00 50%, #ff3d00 70%, transparent 80%);
+  border-radius:50% 50% 40% 40%;
   filter:blur(6px);
+  animation:flame 2.2s infinite ease-in-out;
   opacity:.9;
 }
 
-/* flame colors */
+/* randomize flame motion */
 
-.flame1{
-  background:radial-gradient(circle at 50% 80%, #fff8c6 0%, #ffcc00 20%, #ff7b00 50%, transparent 70%);
-  animation:flameRise 3s infinite ease-in-out;
+.flame:nth-child(odd){
+  animation-duration:1.8s;
 }
 
-.flame2{
-  background:radial-gradient(circle at 50% 80%, #fff4a6 0%, #ff9800 30%, #ff5722 60%, transparent 75%);
-  animation:flameRise 2.2s infinite ease-in-out;
-  transform:translateX(-50%) scale(.9);
+.flame:nth-child(3n){
+  animation-duration:2.6s;
 }
 
-.flame3{
-  background:radial-gradient(circle at 50% 80%, #ffe082 0%, #ff6f00 40%, #ff3d00 65%, transparent 80%);
-  animation:flameRise 1.8s infinite ease-in-out;
-  transform:translateX(-50%) scale(.7);
+.flame:nth-child(4n){
+  transform:scale(.8);
 }
 
-/* movement */
-
-@keyframes flameRise{
+@keyframes flame{
 
   0%{
-    transform:translateX(-50%) translateY(0) scaleX(.8);
-    opacity:.9;
-  }
-
-  25%{
-    transform:translateX(-48%) translateY(-25px) scaleX(1.1);
+    transform:translateY(0) scaleX(.8);
   }
 
   50%{
-    transform:translateX(-52%) translateY(-40px) scaleX(.9);
-  }
-
-  75%{
-    transform:translateX(-49%) translateY(-20px) scaleX(1.05);
+    transform:translateY(-40px) scaleX(1.1);
   }
 
   100%{
-    transform:translateX(-50%) translateY(0) scaleX(.8);
-    opacity:.9;
+    transform:translateY(0) scaleX(.8);
   }
 
 }
@@ -125,9 +110,18 @@ h1{
 <body>
 
 <div class="fire">
-  <div class="flame flame1"></div>
-  <div class="flame flame2"></div>
-  <div class="flame flame3"></div>
+
+<div class="flame"></div>
+<div class="flame"></div>
+<div class="flame"></div>
+<div class="flame"></div>
+<div class="flame"></div>
+<div class="flame"></div>
+<div class="flame"></div>
+<div class="flame"></div>
+<div class="flame"></div>
+<div class="flame"></div>
+
 </div>
 
 <h1>RŪNŌ</h1>
