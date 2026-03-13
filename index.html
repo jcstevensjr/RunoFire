@@ -17,24 +17,67 @@ body{
   align-items:center;
   color:white;
   text-align:center;
-  overflow:hidden;
 }
 
-/* full width fire container */
+/* logo */
 
-.fire{
-  position:absolute;
-  bottom:0;
-  width:100%;
-  height:320px;
-  display:flex;
-  justify-content:space-evenly;
-  align-items:flex-end;
+h1{
+  font-size:72px;
+  letter-spacing:8px;
 }
 
-/* individual flames */
+/* glowing rune */
 
-.flame{
+.rune{
+  color:#ff9800;
+  margin-left:10px;
+  text-shadow:
+    0 0 10px #ff9800,
+    0 0 20px #ff5722,
+    0 0 35px #ff3d00;
+}
+
+/* text */
+
+.tagline{
+  margin-top:20px;
+  font-size:22px;
+  opacity:.9;
+}
+
+.models{
+  margin-top:25px;
+  font-size:20px;
+  opacity:.75;
+}
+
+.launch{
+  margin-top:40px;
+  opacity:.55;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1>RŪNŌ <span class="rune">ᚲ</span></h1>
+
+<div class="tagline">
+Clean-burning pellet stoves
+</div>
+
+<div class="models">
+Jr • Sr • Chief
+</div>
+
+<div class="launch">
+Launching soon
+</div>
+
+</body>
+</html>.flame{
   width:80px;
   height:180px;
   background:
