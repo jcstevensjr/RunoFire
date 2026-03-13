@@ -5,23 +5,48 @@
 <title>RŪNŌ Fire</title>
 
 <style>
+
 body {
-  background: #111;
-  color: #eee;
-  font-family: Helvetica, Arial, sans-serif;
-  text-align: center;
-  margin-top: 140px;
+  margin:0;
+  height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  background:#0b0b0b;
+  color:white;
+  font-family:Helvetica, Arial, sans-serif;
+  text-align:center;
+}
+
+/* flame glow animation */
+
+@keyframes flicker {
+  0% { text-shadow: 0 0 10px #ff5a00, 0 0 20px #ff5a00, 0 0 30px #ff2200; }
+  25% { text-shadow: 0 0 15px #ff7a00, 0 0 25px #ff3300, 0 0 40px #ff2200; }
+  50% { text-shadow: 0 0 12px #ff6600, 0 0 22px #ff3300, 0 0 35px #ff1100; }
+  75% { text-shadow: 0 0 18px #ff7a00, 0 0 30px #ff4400, 0 0 45px #ff2200; }
+  100% { text-shadow: 0 0 10px #ff5a00, 0 0 20px #ff5a00, 0 0 30px #ff2200; }
 }
 
 h1 {
-  font-size: 60px;
-  letter-spacing: 6px;
+  font-size:72px;
+  letter-spacing:8px;
+  animation:flicker 2s infinite;
 }
 
 p {
-  font-size: 22px;
-  opacity: .8;
+  font-size:22px;
+  opacity:0.85;
+  margin-top:20px;
 }
+
+.tagline {
+  margin-top:30px;
+  font-size:20px;
+  opacity:0.7;
+}
+
 </style>
 
 </head>
@@ -32,9 +57,13 @@ p {
 
 <p>Clean-burning pellet stoves</p>
 
-<p>Jr • Sr • Chief</p>
+<div class="tagline">
+Jr • Sr • Chief
+</div>
 
-<p>Coming soon</p>
+<p style="margin-top:40px; opacity:0.6;">
+Launching soon
+</p>
 
 </body>
 </html>
